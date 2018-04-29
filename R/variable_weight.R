@@ -6,7 +6,7 @@ function(vector,var_weight_to) {
 
 	a <- sort(unique(vector)) #Get variable labels
 	new_var <-NULL
-	for (i in a) new_var[vector==a[i]] <- var_weight_to[i]
+	for (i in 1:length(a)) new_var[vector==a[i]] <- var_weight_to[i]
 	new_var[vector==NA] <- 1
 	new_var <- car::recode(new_var,"NA=1")
 
